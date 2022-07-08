@@ -2,8 +2,9 @@ export interface Link {
   id: string;
   description: string;
   url: string;
-  postedBy?: UserVerificationRequirement;
-  votes?: [Vote];
+  postedBy: User;
+  votes: [Vote];
+  createdAt: Date;
 }
 
 export interface Vote {
@@ -17,4 +18,5 @@ export interface User {
   name: string;
   email: string;
   links: [Link];
+  postedBy: User;
 }
